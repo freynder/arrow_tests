@@ -37,7 +37,8 @@ suspend fun main() {
 
         }) { e ->
             println("Raise context for 3_1 error handler: $this")
-            raise(error("Raise in 3_1 error handler"))
+            //this@effect.raise(error("Raise in 3_1 error handler with effect context"))
+            raise(Exception("test 3_1 raised exception in error handler"))
             "Encountered error: $e"
         }
         "Test result 3_1: $result3_1"
